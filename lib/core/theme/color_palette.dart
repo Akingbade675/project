@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-/* LIST ALL COLORS IN PALLETE*/
+/* LIST ALL COLORS IN PALETTE*/
 
 const rYellow = Color(0xFFFDB218);
 const rPurple = Color(0xFF993885);
