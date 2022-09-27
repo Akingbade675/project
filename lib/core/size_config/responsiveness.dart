@@ -10,23 +10,24 @@ class Responsive{
   }
 
   double rHeight(double height){
-    return (screenHeight * (height/100));
+    return (Responsive.screenHeight * (height/100));
   }
 
   double rWidth(double width){
-    return (screenWidth * (width/100));
+    return (Responsive.screenWidth * (width/100));
   }
 
-  double rPixel(double width){
-    return ((screenWidth/100) * (width/3));
-  }
+}
 
-  Widget xWidth(double width){
-    return SizedBox(width: rWidth(width));
-  }
 
-  Widget yHeight(double height){
-    return SizedBox(height: rHeight(height));
-  }
+double rPixel(double width){
+  return ((Responsive.screenWidth/100) * (width/3));
+}
 
+Widget xWidth(double width){
+  return SizedBox(width: Responsive().rWidth(width));
+}
+
+Widget yHeight(double height){
+  return SizedBox(height: Responsive().rHeight(height));
 }
