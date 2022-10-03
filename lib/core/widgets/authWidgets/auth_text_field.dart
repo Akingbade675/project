@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:renaisi_project/core/size_config/responsiveness.dart';
 import 'package:renaisi_project/core/theme/text_theme.dart';
-import '../../../../core/theme/color_palette.dart';
+import '../../../../../core/theme/color_palette.dart';
 
 class CustomTextField extends StatefulWidget {
   final String title;
@@ -56,3 +56,6 @@ class _CustomTextFieldState extends State<CustomTextField> {
     );
   }
 }
+
+
+//roundedCornerRadius
