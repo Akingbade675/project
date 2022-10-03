@@ -3,13 +3,13 @@ import 'package:renaisi_project/core/size_config/responsiveness.dart';
 import 'package:renaisi_project/core/theme/text_theme.dart';
 import '../../../../../core/theme/color_palette.dart';
 
-class CustomTextField extends StatefulWidget {
+class AuthTextField extends StatefulWidget {
   final String title;
   final String hintText;
   final int maxLine;
   final TextInputType keyboardType;
   final bool obscure;
-  const CustomTextField({
+  const AuthTextField({
     Key? key,
     required this.title,
     required this.hintText,
@@ -19,10 +19,10 @@ class CustomTextField extends StatefulWidget {
   }) : super(key: key);
 
   @override
-  State<CustomTextField> createState() => _CustomTextFieldState();
+  State<AuthTextField> createState() => _AuthTextFieldState();
 }
 
-class _CustomTextFieldState extends State<CustomTextField> {
+class _AuthTextFieldState extends State<AuthTextField> {
   @override
   Widget build(BuildContext context) {
 
@@ -31,7 +31,7 @@ class _CustomTextFieldState extends State<CustomTextField> {
       children: [
         Text(
           widget.title,
-          style: TextThemeStyle.title3.copyWith(color: rPurple),
+          style: TextThemeStyle.title3.copyWith(color: rPurple,fontSize: rPixel(12)),
         ),
         yHeight(1.5),
         TextField(
