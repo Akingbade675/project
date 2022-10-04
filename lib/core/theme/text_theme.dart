@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:renaisi_project/core/size_config/responsiveness.dart';
 
 class TextThemeStyle {
   static TextStyle heading1 = const TextStyle(
@@ -30,4 +31,15 @@ class TextThemeStyle {
 
   static TextStyle title4 = const TextStyle(
       fontSize: 8, fontFamily: 'Poppins', fontWeight: FontWeight.w600);
+}
+
+TextStyle textStyle(
+    {FontWeight fontWeight = FontWeight.w600,
+    required double fontSize,
+    required Color color}) {
+  return TextStyle(
+      fontFamily: 'Poppins',
+      fontWeight: fontWeight,
+      color: color,
+      fontSize: rPixel(fontSize));
 }

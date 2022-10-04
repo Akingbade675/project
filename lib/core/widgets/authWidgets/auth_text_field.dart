@@ -9,14 +9,14 @@ class AuthTextField extends StatefulWidget {
   final int maxLine;
   final TextInputType keyboardType;
   final bool obscure;
-  const AuthTextField({
-    Key? key,
-    required this.title,
-    required this.hintText,
-    required this.maxLine,
-    required this.keyboardType,
-    this.obscure = false
-  }) : super(key: key);
+  const AuthTextField(
+      {Key? key,
+      required this.title,
+      required this.hintText,
+      required this.maxLine,
+      required this.keyboardType,
+      this.obscure = false})
+      : super(key: key);
 
   @override
   State<AuthTextField> createState() => _AuthTextFieldState();
@@ -25,13 +25,12 @@ class AuthTextField extends StatefulWidget {
 class _AuthTextFieldState extends State<AuthTextField> {
   @override
   Widget build(BuildContext context) {
-
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
           widget.title,
-          style: TextThemeStyle.title3.copyWith(color: rPurple,fontSize: rPixel(12)),
+          style: textStyle(fontSize: 12, color: rPurple),
         ),
         yHeight(1.5),
         TextField(

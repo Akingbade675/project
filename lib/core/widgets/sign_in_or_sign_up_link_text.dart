@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:renaisi_project/core/theme/color_palette.dart';
+import 'package:renaisi_project/core/theme/text_theme.dart';
 
 class SignLinkText extends StatelessWidget {
   final String text;
@@ -27,12 +28,9 @@ class SignLinkText extends StatelessWidget {
             ),
           ),
           const SizedBox(width: 8),
-          Text(
-            buttonText,
-            style: const TextStyle(
-              color: rYellow,
-            ),
-          ),
+          Text(buttonText,
+              style: textStyle(
+                  fontWeight: FontWeight.w700, fontSize: 16, color: rYellow)),
         ],
       ),
     );
