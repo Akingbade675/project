@@ -9,13 +9,15 @@ class AuthTextField extends StatefulWidget {
   final int maxLine;
   final TextInputType keyboardType;
   final bool obscure;
+  final double borderRadius;
   const AuthTextField(
       {Key? key,
       required this.title,
       required this.hintText,
-      required this.maxLine,
+      this.maxLine = 1,
       required this.keyboardType,
-      this.obscure = false})
+      this.obscure = false,
+      this.borderRadius = 100})
       : super(key: key);
 
   @override
@@ -30,23 +32,36 @@ class _AuthTextFieldState extends State<AuthTextField> {
       children: [
         Text(
           widget.title,
-          style: textStyle(fontSize: 12, color: rPurple),
+          style: textStyle(
+              fontSize: 12,
+              color: widget.borderRadius == 100 ? rPurple : rBlack60),
         ),
-        yHeight(1.5),
+        yHeight(8),
         TextField(
           maxLines: widget.maxLine,
           cursorColor: rPurple.withOpacity(0.3),
           cursorWidth: 1.5,
-          cursorHeight: rPixel(18),
+          cursorHeight: rPixel(14),
+          style: textStyle(
+            fontSize: rPixel(12),
+            color: rBlack60,
+            fontWeight: FontWeight.w400,
+          ),
           decoration: InputDecoration(
             contentPadding: EdgeInsets.symmetric(
                 vertical: rPixel(15), horizontal: rPixel(20)),
             hintText: widget.hintText,
+            hintStyle: TextStyle(
+              fontSize: rPixel(12),
+              fontWeight: FontWeight.w400,
+              // color: rBlack60,
+            ),
             focusedBorder: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(rPixel(100)),
+                borderRadius:
+                    BorderRadius.circular(rPixel(widget.borderRadius)),
                 borderSide: const BorderSide(color: rPurple)),
             enabledBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(rPixel(100)),
+              borderRadius: BorderRadius.circular(rPixel(widget.borderRadius)),
               borderSide: BorderSide(color: rGrey.withOpacity(0.13)),
             ),
           ),
